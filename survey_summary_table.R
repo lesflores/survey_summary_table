@@ -28,8 +28,8 @@ base <- read_csv("data/base_encuesta.csv") |>
 tabla <- base |>
   tbl_summary(
     statistic = list(
-      all_continuous() ~ "{mean} ({sd})",
-      all_categorical() ~ "{n} ({p}%)"
+  all_continuous() ~ "{mean} ({sd}); {median} [{p25}, {p75}]",
+  all_categorical() ~ "{n} ({p}%)"
     )
   )
 
@@ -47,3 +47,4 @@ gtsave(
 # =========================================================
 # Si cambias la base, la tabla se actualiza automáticamente
 # =========================================================
+
